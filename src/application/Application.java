@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFrame;
+import model.Image;
 import view.ImageDisplay;
 
 
@@ -45,5 +46,13 @@ public class Application extends JFrame {
         ImagePanel imagePanel = new ImagePanel(image());
         imageDisplay = imagePanel;
         return imagePanel;
+    }
+
+    private Image image(){
+        return new FileImageReader("C:\\Users\\Public\\Pictures\\Sample Pictures").read();
+    }
+    
+    private Component toolbar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

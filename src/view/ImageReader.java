@@ -1,5 +1,7 @@
 package view;
 
-public class ImageReader {
-    
+import model.Image;
+
+public interface ImageReader {
+    public Image read();
 }
