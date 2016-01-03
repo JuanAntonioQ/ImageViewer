@@ -1,5 +1,9 @@
 package view;
 
-public class ImageDisplay {
+import model.Image;
+
+public interface ImageDisplay {
     
+    public Image image();
+    public void show(Image image);
 }

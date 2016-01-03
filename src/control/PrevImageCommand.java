@@ -2,7 +2,7 @@ package control;
 
 import view.ImageDisplay;
 
-public class PrevImageCommand {
+public class PrevImageCommand implements Command{
 
     private final ImageDisplay imageDisplay;
     
