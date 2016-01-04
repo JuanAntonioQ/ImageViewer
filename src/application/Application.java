@@ -7,7 +7,7 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import model.Image;
 import view.ImageDisplay;
-
 
 public class Application extends JFrame {
     
@@ -64,5 +63,24 @@ public class Application extends JFrame {
         return panel;
     }
 
-    
+    private JButton prevButton() {
+        JButton button = new JButton("<");
+        button.addActionListener(doCommand("prev"));
+        return button;
+    }
+
+    private JButton nextButton() {
+        JButton button = new JButton(">");
+        button.addActionListener(doCommand("next"));
+        return button;
+    }
+
+    private ActionListener doCommand(final String operation) {
+        return new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commands.get(operation).execute();
+            }
+        };
+    }    
 }
