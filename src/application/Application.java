@@ -6,9 +6,14 @@ import control.PrevImageCommand;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.PopupMenu;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import model.Image;
 import view.ImageDisplay;
 
@@ -53,6 +58,11 @@ public class Application extends JFrame {
     }
     
     private Component toolbar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panel.add(prevButton());
+        panel.add(nextButton());
+        return panel;
     }
+
+    
 }
